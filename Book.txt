@@ -12,3 +12,5 @@ Book.txt
 06-open-source-agents.md
 07-deployment-optimization.md
 08-self-improvement.md
+已同步到 GitHub: 2026-04-17-test
+
