@@ -505,7 +505,7 @@ LangChain 的真正威力在于其作为认知架构的编排能力。通过Lang
 （LCEL），开发者可以用一种声明式、链式的方式将上述组件优雅地组合在一起。LCEL
 使用管道符 | 连接各个处理步骤，代码直观且易于维护。
 ```
-# LCEL 示例代码结构
+**LCEL 示例代码结构**
 ```
 
 prompt = hub.pull("rlm/rag-prompt")
@@ -518,7 +518,7 @@ rag_chain = (
 | StrOutputParser()
 )
 ```
-# 调用链 rag_chain.invoke("What is Task Decomposition?")
+**调用链 rag_chain.invoke("What is Task Decomposition?")**
 ```
 
 LCEL 不仅简化了代码，还带来了诸多好处，如自动的并行执行优化、异步支持和无
@@ -556,22 +556,22 @@ KeywordTableIndex 从每个文档中提取关键词，
 from llama_index.core import SimpleDirectoryReader, SummaryIndex
 from llama_index.core.node_parser import SentenceSplitter
 ```
-# 1. 加载文档
+**1. 加载文档**
 ```
 
 documents = SimpleDirectoryReader("your_data_directory").load_data()
 ```
-# 2. 创建一个分割器
+**2. 创建一个分割器**
 ```
 
 splitter = SentenceSplitter(chunk_size=1024)
 ```
-# 3. 构建摘要索引
+**3. 构建摘要索引**
 ```
 
 summary_index = SummaryIndex.from_documents(documents, transformations=[splitter])
 ```
-# 4. 创建查询引擎并提问
+**4. 创建查询引擎并提问**
 ```
 
 query_engine = summary_index.as_query_engine(response_mode="tree_summarize")

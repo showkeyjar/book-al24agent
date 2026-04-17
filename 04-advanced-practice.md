@@ -3,7 +3,7 @@
 })
 
 ```
-# 4. 生成最终纪要，标注不确定性
+**4. 生成最终纪要，标注不确定性**
 ```
 
     final_minutes = format_minutes(
@@ -93,13 +93,13 @@ Whisper (本地) 150ms 94.8% 算力成本 ✅
 核心代码实现如下：
 python
 ```
-# 工具定义 = LLM 的"说明书"
+**工具定义 = LLM 的"说明书"**
 ```
 
 weather_tool_definition = { ... }
 
 ```
-# 工具函数 = 实际执行
+**工具函数 = 实际执行**
 ```
 
 def get_weather(city: str, date: str = None) -> dict:
@@ -107,7 +107,7 @@ def get_weather(city: str, date: str = None) -> dict:
     return {"city": city, "temperature": response["temp"], ...}
 
 ```
-# 调用流程：工具选择 → 参数提取 → 执行 → 结果注入
+**调用流程：工具选择 → 参数提取 → 执行 → 结果注入**
 ```
 
 response = llm.chat(messages, tools=[weather_tool_definition])
@@ -161,7 +161,7 @@ python
 class EmailClassifier:
     async def classify(self, email: Dict) -> ClassifiedEmail:
 ```
-# 用 LLM 分析邮件意图
+**用 LLM 分析邮件意图**
 ```
 
         result = await self.llm.generate(prompt)
@@ -172,7 +172,7 @@ python
 class EmailAutoResponder:
     async def generate_draft(self, email: Dict) -> str:
 ```
-# 根据类型选择模板
+**根据类型选择模板**
 ```
 
         templates = {'inquiry': "...", 'request': "...", ...}
@@ -416,7 +416,7 @@ Diffusion API (如 Segmind)
 可以参考LangChain 的官方多模态研究项目。
 
 ```
-# 1. 导入必要的库
+**1. 导入必要的库**
 ```
 
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -426,7 +426,7 @@ from langgraph.graph import StateGraph, END
 from replicate import Client # 用于调用 Stable Diffusion
 
 ```
-# 2. 定义智能体的状态
+**2. 定义智能体的状态**
 ```
 
 class 智能体 State(TypedDict):
@@ -438,7 +438,7 @@ image_url: str
 final_content: dict
 
 ```
-# 3. 定义各个节点的执行函数
+**3. 定义各个节点的执行函数**
 ```
 
 def research_node(state): # 调用搜索工具
@@ -471,7 +471,7 @@ state['image_url'] = output[0]
 return state
 
 ```
-# 4. 构建LangGraph 工作流
+**4. 构建LangGraph 工作流**
 ```
 
 workflow = StateGraph(智能体State)
@@ -481,7 +481,7 @@ workflow.add_node("create_image_prompt", image_prompt_node)
 workflow.add_node("generate_image", image_generation_node)
 
 ```
-# 5. 定义流程的边
+**5. 定义流程的边**
 ```
 
 workflow.set_entry_point("research")
@@ -491,7 +491,7 @@ workflow.add_edge("create_image_prompt", "generate_image")
 workflow.add_edge("generate_image", END)
 
 ```
-# 6. 编译并执行
+**6. 编译并执行**
 ```
 
 app = workflow.compile()
