@@ -1,0 +1,14 @@
+Book.txt
+
+# 章节顺序（自动生成）
+
+chapters/00-intro.md
+chapters/00-preface.md
+chapters/01-thinking-engine.md
+chapters/02-memory-palace.md
+chapters/03-tool-calling.md
+chapters/04-advanced-practice.md
+chapters/05-multi-agent.md
+chapters/06-open-source-agents.md
+chapters/07-deployment-optimization.md
+chapters/08-self-improvement.md
