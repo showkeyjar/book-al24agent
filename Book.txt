@@ -2,15 +2,15 @@ Book.txt
 
 # 章节顺序
 
-manuscripts/00-intro.md
-manuscripts/00-preface.md
-manuscripts/01-thinking-engine.md
-manuscripts/02-memory-palace.md
-manuscripts/03-tool-calling.md
-manuscripts/04-advanced-practice.md
-manuscripts/05-multi-agent.md
-manuscripts/06-open-source-agents.md
-manuscripts/07-deployment-optimization.md
-manuscripts/08-self-improvement.md
-已同步到 GitHub: 2026-04-17-test
+00-intro.md
+00-preface.md
+01-thinking-engine.md
+02-memory-palace.md
+03-tool-calling.md
+04-advanced-practice.md
+05-multi-agent.md
+06-open-source-agents.md
+07-deployment-optimization.md
+08-self-improvement.md
+已同步到 GitHub: 2026-04-19-fix
 
